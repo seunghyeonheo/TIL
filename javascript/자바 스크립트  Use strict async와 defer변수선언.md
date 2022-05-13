@@ -27,3 +27,5 @@ async < defer
   값이 변하지 않는 것을 사용하는게 좋음
 
 [참조링크]: https://www.youtube.com/watch?v=OCCpGh4ujb8&amp;list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&amp;index=3	""드림코딩""
+
+til
