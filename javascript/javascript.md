@@ -1,4 +1,4 @@
-## 자바 스크립트 : Use strict/ async와 defer/변수선언
+## Javascript 
 
 - 자바스크립트는 Parser blocking resource 
 
