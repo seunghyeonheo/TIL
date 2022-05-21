@@ -1,4 +1,4 @@
-# 0412 오늘 배운 것
+# Git
 
 ## git clone, pull
 
