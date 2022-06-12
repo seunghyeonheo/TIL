@@ -3,9 +3,8 @@
 
 
  \5. 스프링 부트 프로젝트 살펴보기
-  
+
  (1) 프로젝트의 주요 파일 및 구조
- 
 
   ■ src/main/java 
   \- 자바소스 폴더
@@ -151,7 +150,7 @@ test {
 
 (4) 서버 재실행
  \- sts 왼쪽 하단 [Boot Dashboard]에서 프로젝트 선택후 시작아이콘으로 한다.
-  ![img](http://lectureblue.pe.kr/ckstorage/images/fw/spring_boot/01/3.jpg)
+  ![](springboot.assets/boot.jpg)
  \- [Boot Dashboard] 안보이면 상단에 다음 아이콘을 클릭하여 나타낸다.
 
-  ![img](http://lectureblue.pe.kr/ckstorage/images/fw/spring_boot/01/4.jpg)
+![](springboot.assets/boot2.jpg)
