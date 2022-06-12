@@ -70,8 +70,12 @@ MVC 개발
   ⑧ Action 구현 Class 제작 
    . Service Class 연동 
 
+<<<<<<< HEAD
   ⑨ JSP 생성 연동 
 
 
 
 출처 : 멀티캠퍼스 강의
+=======
+  ⑨ JSP 생성 연동 
+>>>>>>> f53c224dd22184ef53870294432a7e0cd88b6779
