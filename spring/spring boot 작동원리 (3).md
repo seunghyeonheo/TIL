@@ -16,3 +16,7 @@ POINT!
 **Spring Framework는 객체를 생성하고 객체 간의 의존성을 연결하는 역할을 대신 수행해 줍니다. 이것을 의존성 주입이라고 합니다.**
 **Spring IoC 컨테이너는 객체를 생성, 관리하는 역할을 하는 컴포넌트 입니다.**
 **Spring Bean은 Spring에 의해서 생송되고 관리되는 객체입니다.**
+
+
+
+출처 : https://keepgoingforever.tistory.com/54?category=1251460
