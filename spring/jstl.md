@@ -1,4 +1,4 @@
-# jstl
+# #1 jstl
 
 
 
@@ -65,3 +65,13 @@ URL 처리  import   URL을 사용하여 다른 자원의 결과를 삽입
 \--------------------------------------------------------------------------- 
 
  
+
+# #2 jstl Tag
+
+![](jstl.assets/foreach tag.jpg)
+
+![foreach 속성](jstl.assets/foreach 속성.jpg)
+
+<img src="jstl.assets/when tag.jpg" alt="when tag" style="zoom:80%;" />
+
+![](jstl.assets/when 속성.jpg)
