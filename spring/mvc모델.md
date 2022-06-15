@@ -1,5 +1,3 @@
-# Spring
-
 ## MVC 모델
 
 MVC 개발

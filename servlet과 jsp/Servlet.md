@@ -125,7 +125,7 @@ public class HelloServlet extends HttpServlet {
   http://localhost:8080/web-study-02/hello
 
 - http://localhost:8080 까지 입력하여 웹 서버까지 접근했다면 어떤 서비스를 받을지에 따라 그 이후에 기술되는 
-  내용이 달라지는데, 이후에 기술하 문자열을 컨텍스트 패스(Context Path)라고 하고 
+  내용이 달라지는데, 이후에 기술하는 문자열을 컨텍스트 패스(Context Path)라고 하고 
   이에 이해서 요청되는 웹 애플리케이션이 달라집니다. 
   컨텍스트 패스란 개념을 다시 정리해서 말하자면 웹 서버에서 제공하는 다야한 웹 애플리케이션을 구분하기 위해서 
   사용하는 것입니다. 
@@ -165,7 +165,27 @@ public class HelloServlet extends HttpServlet {
 
  ## 서블릿 동작 과정
 
-![img](https://mail.google.com/mail/u/0?ui=2&ik=df01b5266f&attid=0.1.1&permmsgid=msg-f:1733519533312094237&th=180eb2d4ba44b01d&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ9IK2sshKqLrHCMui0erPZ-nrUKIr1P-FyZbo8qrkwmtcFHFhqSE-5HnqZDTCfId_nUfNDT5uA2ALs3nQJU_bqmFmaWmjSaweHkrFa_P_4g_ToaELzgsZMC9to&disp=emb)
+![img](https://t1.daumcdn.net/cfile/tistory/225EC444558575B81A)
+
+
+
+```
+1 클라이언트가 웹 브라우저에 URL을 입력하면 해당하는 HTTP Request를 해당하는 서버의 Servlet Container에 보낸다.
+
+2. Servlet Container는 HttpServletRequest, HttpServletResponse 두 객체를 생성한다.
+
+3. 클라이언트가 요청한 URL을 DD(배포서술자, Deplyment Descriptor)를 참조해서 분석하여 어느 서블릿에 대한 요청인지 찾는다.
+
+4. Servlet Container는 service() 메소드를 호출하며, POST, GET여부에 따라 doGet() 또는 doPost()가 호출된다.
+
+5. doGet() 또는 doPost() 메소드는 동적인 페이지를 생성한 후 HttpServletResponse 객체에 응답을 보낸다.
+
+6. 응답이 완료되면 HttpServletRequest, HttpServletResponse 두 객체를 소멸시킨다.
+```
+
+출처: https://hackersstudy.tistory.com/72 [공대인들이 직접쓰는 컴퓨터공부방:티스토리]
+
+
 
 - 동일한 작업의 경우 서블릿은 메모리에 존재하는 서블릿을 재사용함으로써 훨씬 빠르고 효율적으로 동작합니다. 
 
