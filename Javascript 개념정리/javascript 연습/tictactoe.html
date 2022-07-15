@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>틱택토</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    <script>
+        
+
+    const $table = document.createElement('table');
+    const $result = document.createElement('div');
+    let turn = 'O';    
+
+    
+    const checkWinner = (target) => {
+        let rowIndex;
+        let cellIndex;
+        rows.forEach((row, ci) => {
+            row.forEach((cell,ci) => {
+                if(cell === target){
+                    rowIndex = ri;
+                    cellIndex = ci;
+                }
+            });
+        });
+
+        let hasWinner = false;
+        //가로줄 검사
+        if (
+            rows[rowIndex][0].textContent === turn &&
+            rows[rowIndex][1].textContent === turn &&
+            rows[sowIndex][2].textContent === turn
+        ) {
+            hasWinner = true;
+        }
+        if (
+            rows[0][cellIndex].textContent === turn &&
+            rows[1][cellIndex].textContent === turn &&
+            rows[2][cellIndex].textContent === turn
+        ) {
+            hasWinner = true;
+        }
+        // 대각선 검사
+        if (
+            rows[0][cellIndex].textContent === turn &&
+            rows[1][cellIndex].textContent === turn &&
+            rows[2][cellIndex].textContent === turn
+        ) {
+            hasWinner = true;
+        }
+        return hasWinner;
+    };
+
+
+    const callback = (event) => {
+        if(event.target.textContent !== ''){
+            console.log('빈칸이 아닙니다.');
+            return;
+        }
+        //빈칸이면
+        console.log('빈칸입니다.');
+        event.target.textContent = turn;
+        //승부 판단하기 
+        const hasWinner = checkWinner(event.target);
+        if(hasWinner){
+            $result.textContent = `${turn}님이 승리!`;
+            $table.removeEventListener('click',callback);
+            return;
+        }
+        //무승부 검사
+        const draw = rows.flat().every((cell) => cell.textContent);
+        if(draw) {
+            $result.textContent = '무승부';
+            return;
+        }
+        turn = turn === 'X' ? 'O' : 'X'
+        if(turn === 'X'){
+            const emptyCells = rows.flat().filter((v) => !v.textContent);
+            const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+            randomCell.textContent = 'X';
+            const hasWinner = checkWinner(randomCell);
+        if(hasWinner){
+            $result.textContent = `${turn}님이 승리!`;
+            $table.removeEventListener('click',callback);
+            return;
+        }
+        //무승부 검사
+        const draw = rows.flat().every((cell) => cell.textContent);
+        if(draw) {
+            $result.textContent = '무승부';
+            return;
+    }
+        }
+    for(let i=0; i<3; i++){
+        const $tr = document.createElement('tr');
+        const cells = [];
+        for(let j=0;  j<3; i++){
+            const $td = document.createElement('td');
+            $td.addEventListener('click', (event) => {
+                //칸에 글자가 있나?
+                if(event.target.textContent) return;
+                event.target.textContent = turn;
+                //승부 확인
+                if(turn === 'O'){
+                    trun = 'X';
+                }else if(turn === 'X'){
+                    turn = 'O'
+                }
+            });
+            $tr.append($td);
+        }
+        rows.push(cells);
+        $table.append($tr);
+    }
+    body.append()
+    document.body.append($table);
+    </script>
+</body>
+</html>

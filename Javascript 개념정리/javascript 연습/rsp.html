@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+    <style>
+        #computer {
+            width: 143px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="computer"></div>
+    <div>
+        <button id="scissors" class="btn">가위</button>
+        <button id="rock" class="btn">바위</button>
+        <button id="paper" class="btn">보</button>
+    </div>
+    <div id="score">0</div>
+    <script>
+        const $computer = document.querySelector('#computer');
+        const $score = document.querySelector('#score');
+        const $rock = document.querySelector('#rock');
+        const $scissors = document.querySelector('#scissors');
+        const $paper = document.querySelector('#paper');
+        const IMG_URL = './가위바위보.jpg';
+        $computer.style.background = `url(${IMG_URL}) -464px 0`;
+        $computer.style.backgroundSize = 'auto 200px';
+
+        const rspX = {
+            scissors : '0', //가위
+            rock: '-220px', //바위
+            paper : '-440px', //보
+        };
+
+        let computerChoice = scissors;
+        const changeComputerHand = () => {
+            if (computerChoice === 'scissors'){ //가위
+                computerChoice = rock;
+            }else if (computerChoice === 'rock') { //바위
+                computerChoice = paper;
+            }else { //보
+                computerChoice = scissors;
+            }
+            $computer.style.background = `url(${IMG_URL}) ${rspX[computerChoice]} 0`;
+            $computer.style.backgroundSize = 'auto 200px';
+        }
+        
+        let intervalId = setInterval(changeComputerHand, 50);
+
+        //clickButton 5번 호출, 1번 인터벌, 2번, 3번, 4번, 5번
+        //그 다음에 버튼을 클릭하면 5번만 취소
+        const clickButton = () => {
+            clearInterval(intervalId);
+            //점수 계산 및 화면 표시
+            
+
+            let message;
+            //2,-1은 승리조건이고, -2,1은 패배조건, 점수표 참고 
+            if([2,-1].includes(diff)) {
+                console.log('승리');
+            }else if([-2,1].includes(diff)){
+                console.log('패배');
+            }else{
+                console.log('무승부');
+            }
+            $score.textContent = `${message} 총: ${socre}점`
+                setTimeout(() => {
+                clearInterval(intervalId);
+                intervalId = setInterval(changeComputerHand, 50);
+            }, 1000);
+    };
+    $rock.addEventListener('click',clickButton);
+    $scissors.addEventListener('click',clickButton);
+    $paper.addEventListener('click',clickButton);
+
+    </script>
+
+</body>
+</html>
